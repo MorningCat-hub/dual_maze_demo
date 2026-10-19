@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+
+[node name="Main" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.035, 0.045, 0.07, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.0
+offset_top = 8.0
+offset_right = -18.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_font_sizes/font_size = 20
+text = "双窗迷宫"
+
+[node name="Spacer" type="Control" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Difficulty" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.72, 0.88, 1)
+text = "难度"
+
+[node name="Status" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.72, 0.88, 1)
+text = "E 交换上下/左右操作"
+
+[node name="Split" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 44.0
+offset_right = -12.0
+offset_bottom = -44.0
+theme_override_constants/separation = 12
+
+[node name="LeftBox" type="SubViewportContainer" parent="Split"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="LeftView" type="SubViewport" parent="Split/LeftBox"]
+
+[node name="RightBox" type="SubViewportContainer" parent="Split"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="RightView" type="SubViewport" parent="Split/RightBox"]
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -38.0
+offset_right = -18.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.45, 0.52, 0.64, 1)
+theme_override_font_sizes/font_size = 15
+text = "W / S 上下移动 · A / D 左右移动 · E 交换移动方式 · R 重开 · 1 2 3 切难度"
+horizontal_alignment = 1
+vertical_alignment = 1

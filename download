@@ -1,0 +1,14 @@
+# Godot 4 缓存 / 导入产物（不需要提交，打开工程会自动重建）
+.godot/
+.import/
+*.translation
+
+# 导出配置（含本地路径，通常不入库；要发 Release 时再改）
+export_presets.cfg
+export.cfg
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
